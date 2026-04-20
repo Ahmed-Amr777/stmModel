@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone *)",
+      "Bash(arm-none-eabi-gcc -c -mcpu=cortex-m3 -mthumb -DSTM32F103xB -DUSE_HAL_DRIVER -I data/STM32CubeF1/Drivers/STM32F1xx_HAL_Driver/Inc -I data/STM32CubeF1/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I data/STM32CubeF1/Drivers/CMSIS/Include -O0 -g data/STM32CubeF1/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_crc.c -o data/compiled_data/hal_crc_O0.o)",
+      "Bash(arm-none-eabi-gcc -c -mcpu=cortex-m3 -mthumb -DSTM32F103xB -DUSE_HAL_DRIVER -I data/STM32CubeF1/Drivers/STM32F1xx_HAL_Driver/Inc -I data/STM32CubeF1/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I data/STM32CubeF1/Drivers/CMSIS/Include -I data/compiled_data -O0 -g data/STM32CubeF1/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_crc.c -o data/compiled_data/hal_crc_O0.o)",
+      "Bash(python dataprocessing/extractFunctionsFromObj.py)",
+      "Bash(python dataprocessing/extractFunctionsFromObj.py \"data/compiled_data/hal_crc_O0.o\" \"data/compiled_data\")",
+      "Bash(python dataprocessing/normalization.py \"data/compiled_data/hal_crc_O0.json\")",
+      "Bash(pip install *)",
+      "WebSearch"
+    ]
+  }
+}
