@@ -36,7 +36,7 @@ def extract_functions(obj_path: Path) -> list[dict]:
     func_header = re.compile(r"^[0-9a-f]+ <(.+?)>:$")
     insn_line = re.compile(r"^\s+([0-9a-f]+):\s+(.+)$")
     current_func = None
-    blocks: dict[str, list[str]] = {}
+    blocks: dict[str, list[dict]] = {}
 
     for line in objdump_out.splitlines():
         m = func_header.match(line)
@@ -46,7 +46,10 @@ def extract_functions(obj_path: Path) -> list[dict]:
         elif current_func is not None:
             m2 = insn_line.match(line)
             if m2:
-                blocks[current_func].append(m2.group(2).strip())
+                blocks[current_func].append({
+                    "address": int(m2.group(1), 16),
+                    "instruction": m2.group(2).strip(),
+                })
 
     for fn in functions:
         fn["instructions"] = blocks.get(fn["name"], [])
