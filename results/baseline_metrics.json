@@ -1,0 +1,14 @@
+{
+  "top1_accuracy": 0.6463,
+  "top5_accuracy": 0.746,
+  "mrr": 0.6924,
+  "same_func_avg_sim": 0.8341,
+  "cross_func_avg_sim": 0.6025,
+  "gap": 0.2316,
+  "total_queries": 622,
+  "top1_hits": 402,
+  "top5_hits": 464,
+  "eval_time_seconds": 212.6,
+  "model": "hustcw/clap-asm",
+  "split": "test"
+}

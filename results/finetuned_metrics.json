@@ -1,0 +1,15 @@
+{
+  "top1_accuracy": 0.8312,
+  "top5_accuracy": 0.9453,
+  "mrr": 0.8829,
+  "same_func_avg_sim": 0.8456,
+  "cross_func_avg_sim": 0.0553,
+  "gap": 0.7903,
+  "total_queries": 622,
+  "top1_hits": 517,
+  "top5_hits": 588,
+  "eval_time_seconds": 209.2,
+  "model": "hustcw/clap-asm",
+  "adapters": "models\\finetuned\\lora_adapters",
+  "split": "test"
+}
